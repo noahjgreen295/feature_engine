@@ -32,8 +32,7 @@ def test_contains_na(df_na):
 @pytest.mark.parametrize(
     "X_in, y_in, expected_1, expected_2, exception_type, exception_match",
     [
-        # * If both parameters are numpy objects,
-        # they are converted to pandas objects.
+        # If both parameters are numpy objects, they are converted to pandas objects.
         (
             np.array([[1, 2, 3, 4], [5, 6, 7, 8]]).T,
             np.array([1, 2, 3, 4]),
@@ -42,7 +41,7 @@ def test_contains_na(df_na):
             None,
             None,
         ),
-        # * If one parameter is a numpy object and the
+        # If one parameter is a numpy object and the
         # other is a pandas object, the former will be
         # converted to a pandas object, with the indexes
         # of the latter.
@@ -68,7 +67,7 @@ def test_contains_na(df_na):
             None,
             None,
         ),
-        # * If both parameters are pandas objects, and their
+        # If both parameters are pandas objects, and their
         # indexes are inconsistent, an exception is raised
         # (i.e.this is the caller's error.)
         (
@@ -81,7 +80,7 @@ def test_contains_na(df_na):
             ValueError,
             ".*Index.*",
         ),
-        # * If both parameters are pandas objects and their indexes match, they are
+        # If both parameters are pandas objects and their indexes match, they are
         # returned unchanged.
         (
             pd.DataFrame(
